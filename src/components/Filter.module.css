@@ -1,0 +1,42 @@
+.filter__flex {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 5vh;
+}
+
+.filter__sort__item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.filter__title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.category {
+  padding: 10px 15px;
+  background-color: white;
+  border-radius: 3px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+}
+
+.filter_filters__item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.filter__item > button {
+  padding: 10px 25px;
+  background-color: white;
+  border-radius: 3px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+}

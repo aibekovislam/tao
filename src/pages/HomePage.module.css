@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 71vw;
+  margin: 0 auto;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3vh;
+}
+
+.first__title {
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.first__title > span {
+  font-size: 18px;
+  color: gray;
+  font-weight: 400;
+}
+
+.carousel__img2 {
+  position: relative;
+  padding-left: 20px;
+}
+
+.carousel__img2 > img {
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.price {
+  background-color: white;
+  position: absolute;
+  padding: 20px 20px;
+  border-radius: 10px;
+  font-size: 23px;
+  color: #90687e;
+  bottom: 10%;
+  left: 70%;
+}
+
+.dishes__name {
+  font-weight: 600;
+  margin-top: 2vh;
+  margin-bottom: 1vh;
+  max-width: 150px;
+  margin-right: 0;
+  margin-left: 0;
+  font-size: 18px;
+}
+
+.info {
+  font-size: 14px;
+  color: gray;
+}
+
+.arrowLeftSVG {
+  z-index: 3;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.arrowleft {
+  padding: 20px !important;
+  border-radius: 100px;
+  z-index: 2;
+}
+
+.arrowright {
+  padding: 20px !important;
+  border-radius: 100px;
+  z-index: 2;
+}
+
+.arrowRightSVG {
+  z-index: 3;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  color: black;
+}
