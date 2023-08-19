@@ -24,15 +24,6 @@ function Filter() {
           <option>category</option>
         </select>
       </div>
-      <div className={styles.filter__item}>
-        <button>Vegeterian</button>
-      </div>
-      <div className={styles.filter__item}>
-        <button>Seafood</button>
-      </div>
-      <div className={styles.filter__item}>
-        <button>Politry</button>
-      </div>
     </div>
   );
 }
