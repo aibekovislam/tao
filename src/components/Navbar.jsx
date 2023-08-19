@@ -37,7 +37,7 @@ function Navbar() {
               setDesert(true);
             }}
           >
-            Десерты
+            Завтраки
           </div>
           <div
             className={`${styles.navigation__item} ${lunch && styles.active}`}
@@ -59,7 +59,7 @@ function Navbar() {
               setDesert(false);
             }}
           >
-            Завтраки
+            Десерты
           </div>
         </div>
       </div>
