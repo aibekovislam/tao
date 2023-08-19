@@ -73,6 +73,7 @@ function HomePage() {
   return (
     <div className={styles.container}>
       <Filter />
+
       <div className={styles.titles}>
         <div className={styles.first__title}>
           Завтраки <span>Всего: {breakfastDishes?.length} блюда</span>
@@ -98,6 +99,9 @@ function HomePage() {
               ))}
             </Slider>
           </div>
+          {showModal && selectedProduct && (
+            <ProductModal product={selectedProduct} onClose={closeModal} />
+          )}
         </div>
       </div>
       <div className={styles.titles} style={{ marginTop: "50px" }}>
@@ -125,6 +129,9 @@ function HomePage() {
               ))}
             </Slider>
           </div>
+          {showModal && selectedProduct && (
+            <ProductModal product={selectedProduct} onClose={closeModal} />
+          )}
         </div>
       </div>
       <div className={styles.titles} style={{ marginTop: "50px" }}>
@@ -152,6 +159,9 @@ function HomePage() {
               ))}
             </Slider>
           </div>
+          {showModal && selectedProduct && (
+            <ProductModal product={selectedProduct} onClose={closeModal} />
+          )}
         </div>
       </div>
     </div>
