@@ -1,21 +1,70 @@
-import React from "react";
-import styles from "./ProductModal.module.css"; // Define your modal styles
+import React, { useState } from "react";
+import styles from "./ProductModal.module.css";
+import { ReactComponent as CloseSVG } from "../../assets/close.svg";
+import { ReactComponent as OrderSVG } from "../../assets/cart-outline (1).svg";
 
 function ProductModal({ product, onClose }) {
+  const [count, setCount] = useState(1);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  const decrement = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  };
+
+  const total = (product.price * count).toFixed(2);
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
-        <img
-          src={product.imageUrl}
-          alt={product.name}
-          className={styles.productImg}
-        />
-        <div className={styles.name}>{product.name}</div>
-        <div className={styles.price}>{product.price}</div>
-        <div className={styles.calories}>{product.calories} cal</div>
-        <button onClick={onClose} className={styles.btn_close}>
-          Close
-        </button>
+        <div className={styles.header}>
+          <img
+            src={product.imageUrl}
+            alt={product.name}
+            className={styles.productImg}
+          />
+          <div className={styles.info}>
+            <div className={styles.name}>{product.name}</div>
+            <div className={styles.under}>
+              <div className={styles.calories}>{product.calories} кал</div>
+              <div className={styles.weight}>500 г</div>
+            </div>
+          </div>
+          <button onClick={onClose} className={styles.btn_close}>
+            <CloseSVG />
+          </button>
+          <div className={styles.sub_content}>
+            <div className={styles.ingredients}>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
+              id maxime consequatur,
+            </div>
+          </div>
+        </div>
+        <div className={styles.btns}>
+          <button className={styles.add}>
+            добавить
+            <OrderSVG className={styles.basket} />{" "}
+          </button>
+          <div className={styles.counter}>
+            <div className={styles.counterContainer}>
+              <button className={styles.counterButton} onClick={decrement}>
+                -
+              </button>
+              <span className={styles.counterValue}>{count}</span>
+              <button
+                className={styles.counterButtonIncrement}
+                onClick={increment}
+              >
+                +
+              </button>
+            </div>
+          </div>
+
+          <div className={styles.price}>${total}</div>
+        </div>
       </div>
     </div>
   );
