@@ -4,7 +4,11 @@
       "id": 1,
       "date": "19.08.2023",
       "ordered": false,
-      "dishes": ["Суши", "Картошка Фри", "Пепси"],
+      "dishes": [
+        "Суши",
+        "Картошка Фри",
+        "Пепси"
+      ],
       "phone": "+996704671157",
       "address": "Тунгуч 83"
     },
@@ -12,7 +16,35 @@
       "id": 2,
       "date": "19.08.2023",
       "ordered": false,
-      "dishes": ["Суши", "Картошка Фри", "Пепси"],
+      "dishes": [
+        "Суши",
+        "Картошка Фри",
+        "Пепси"
+      ],
+      "phone": "+996704671157",
+      "address": "Тунгуч 83"
+    },
+    {
+      "id": 3,
+      "date": "20.08.2023",
+      "ordered": true,
+      "dishes": [
+        "Суши",
+        "Картошка Фри",
+        "Пепси"
+      ],
+      "phone": "+996704671157",
+      "address": "Тунгуч 83"
+    },
+    {
+      "id": 4,
+      "date": "21.08.2023",
+      "ordered": true,
+      "dishes": [
+        "Суши2",
+        "Картошка Фри2",
+        "Пепси"
+      ],
       "phone": "+996704671157",
       "address": "Тунгуч 83"
     }
@@ -20,7 +52,9 @@
   "cart": [
     {
       "id": 1,
-      "dishes": ["Суши Филадельфия"]
+      "dishes": [
+        "Суши Филадельфия"
+      ]
     }
   ],
   "dishes": [
@@ -28,57 +62,74 @@
       "id": 1,
       "name": "Суши калифорния",
       "info": "240 калл",
-      "price": "20$",
-      "category": "Второе блюдо"
+      "price": "20",
+      "category": "Второе блюдо",
+      "imageUrl": "https://img.taste.com.au/lNnNoTvU/taste/2010/01/sushi-187034-1.jpg"
     },
     {
       "id": 2,
       "name": "Блинчики",
       "info": "240 калл",
-      "price": "20$",
-      "category": "Завтраки"
+      "price": "20",
+      "category": "Завтраки",
+      "imageUrl": "https://img.iamcook.ru/2018/upl/recipes/cat/u-3d24feaaf1bf12fd18e3544eb0bfbb8a.JPG"
     },
     {
       "id": 3,
       "name": "Суши филадельфия",
       "info": "240 калл",
-      "price": "20$",
-      "category": "Второе блюдо"
+      "price": "20",
+      "category": "Второе блюдо",
+      "imageUrl": "https://img.taste.com.au/lNnNoTvU/taste/2010/01/sushi-187034-1.jpg"
     },
     {
       "id": 4,
       "name": "Яичница",
       "info": "240 калл",
-      "price": "20$",
-      "category": "Завтраки"
+      "price": "20",
+      "category": "Завтраки",
+      "imageUrl": "https://s1.eda.ru/StaticContent/Photos/2/ea/2ea2a5739495455ebe732e8c42cbe453.jpg"
     },
     {
       "id": 5,
       "name": "Суши угумаки",
       "info": "240 калл",
-      "price": "20$",
-      "category": "Второе блюдо"
+      "price": "20",
+      "category": "Второе блюдо",
+      "imageUrl": "https://img.taste.com.au/lNnNoTvU/taste/2010/01/sushi-187034-1.jpg"
     },
     {
       "id": 6,
       "name": "Тирамису",
       "info": "240 калл",
-      "price": "20$",
-      "category": "Десерты"
+      "price": "20",
+      "category": "Десерты",
+      "imageUrl": "https://image.mel.fm/i/d/di9WESYuOp/1200.jpg"
     },
     {
       "id": 7,
       "name": "Мороженое",
       "info": "240 калл",
-      "price": "15$",
-      "category": "Десерты"
+      "price": "15",
+      "category": "Десерты",
+      "imageUrl": "https://efspb.ru/upload/iblock/681/nqdv0x7pq9rvv7ughpwq46gidhx6decd.jpg"
     },
     {
       "id": 8,
       "name": "Стейк",
       "info": "240 калл",
-      "price": "35$",
-      "category": "Второе блюдо"
+      "price": "35",
+      "category": "Второе блюдо",
+      "imageUrl": "https://e0.edimdoma.ru/data/posts/0002/0359/20359-ed4_wide.jpg?1631181444"
+    },
+    {
+      "price": "2000",
+      "info": "400",
+      "name": "Плов",
+      "imageUrl": "https://ist.say7.info/img0001/18/118_0134bxr_2961_1024.jpg",
+      "ordered": false,
+      "category": "Второе блюдо",
+      "id": 9
     }
   ]
 }
