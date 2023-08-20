@@ -8,4 +8,5 @@ export const ACTIONS = {
   cart: "cart",
   orders: "orders",
   order: "order",
+  user: "user",
 };
