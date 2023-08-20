@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Filter from "../components/Filter";
 import styles from "./HomePage.module.css";
 import "slick-carousel/slick/slick.css";
@@ -8,11 +8,15 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { ReactComponent as ArrowLeftSVG } from "../assets/chevron-back-outline (2).svg";
 import { ReactComponent as ArrowRightSVG } from "../assets/chevron-forward-outline (4).svg";
-import ProductModal from "../components/modals/ProductModal";
+import { useMainContext } from "../context/MainContext";
 
 function HomePage() {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const { getDishes, dishes } = useMainContext();
+  const breakfastDishes = dishes.filter((dish) => dish.category === "Завтраки");
+  const secondDishes = dishes.filter(
+    (dish) => dish.category === "Второе блюдо"
+  );
+  const dessertDishes = dishes.filter((dish) => dish.category === "Десерты");
 
   const products = [
     {
@@ -44,16 +48,15 @@ function HomePage() {
       calories: 400,
     },
   ];
+  const [addedToCart, setAddedToCart] = useState(false);
 
-  const openModal = (product) => {
-    setSelectedProduct(product);
-    setShowModal(true);
+  const handleAddToCart = () => {
+    setAddedToCart(!addedToCart);
   };
 
-  const closeModal = () => {
-    setShowModal(false);
-    setSelectedProduct(null);
-  };
+  useEffect(() => {
+    getDishes();
+  }, []);
 
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -89,7 +92,7 @@ function HomePage() {
   const settings = {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -103,21 +106,25 @@ function HomePage() {
 
       <div className={styles.titles}>
         <div className={styles.first__title}>
-          Завтраки <span>Всего: 4 блюда</span>
+          Завтраки <span>Всего: {breakfastDishes?.length} блюда</span>
         </div>
         <div className={styles.carousel}>
           <div className={styles.carousel__item}>
             <Slider {...settings}>
-              {products.map((product, index) => (
-                <div
-                  key={index}
-                  className={styles.carousel__img2}
-                  onClick={() => openModal(product)}
-                >
-                  <img src={product.imageUrl} alt={product.name} />
-                  <div className={styles.price}>{product.price}</div>
-                  <div className={styles.dishes__name}>{product.name}</div>
-                  <div className={styles.info}>{product.calories} cal</div>
+              {breakfastDishes?.map((dish) => (
+                <div className={styles.carousel__img2}>
+                  <img src="https://dasushi.od.ua/storage/article-preview/app-article/41/origin/sushi-polza-i-vred1653924777.jpg?t=1653924778" />
+                  <div className={styles.price}>{dish.price}</div>
+                  <div className={styles.dishes__name}>{dish.name}</div>
+                  <div className={styles.info}>{dish.info}</div>
+                  <button
+                    className={`${styles.addToCart} ${
+                      addedToCart && styles.added
+                    }`}
+                    onClick={() => handleAddToCart()}
+                  >
+                    Добавить в корзину
+                  </button>
                 </div>
               ))}
             </Slider>
@@ -133,21 +140,25 @@ function HomePage() {
       </div>
       <div className={styles.titles} style={{ marginTop: "50px" }}>
         <div className={styles.first__title}>
-          Вторые блюда <span>Всего: 4 блюда</span>
+          Вторые блюда <span>Всего: {secondDishes?.length} блюда</span>
         </div>
         <div className={styles.carousel}>
           <div className={styles.carousel__item}>
             <Slider {...settings}>
-              {products.map((product, index) => (
-                <div
-                  key={index}
-                  className={styles.carousel__img2}
-                  onClick={() => openModal(product)}
-                >
-                  <img src={product.imageUrl} alt={product.name} />
-                  <div className={styles.price}>{product.price}</div>
-                  <div className={styles.dishes__name}>{product.name}</div>
-                  <div className={styles.info}>{product.calories} cal</div>
+              {secondDishes?.map((dish) => (
+                <div className={styles.carousel__img2}>
+                  <img src="https://dasushi.od.ua/storage/article-preview/app-article/41/origin/sushi-polza-i-vred1653924777.jpg?t=1653924778" />
+                  <div className={styles.price}>{dish.price}</div>
+                  <div className={styles.dishes__name}>{dish.name}</div>
+                  <div className={styles.info}>{dish.info}</div>
+                  <button
+                    className={`${styles.addToCart} ${
+                      addedToCart && styles.added
+                    }`}
+                    onClick={() => handleAddToCart()}
+                  >
+                    Добавить в корзину
+                  </button>
                 </div>
               ))}
             </Slider>
@@ -159,21 +170,25 @@ function HomePage() {
       </div>
       <div className={styles.titles} style={{ marginTop: "50px" }}>
         <div className={styles.first__title}>
-          Десерты <span>Всего: 4 блюда</span>
+          Десерты <span>Всего: {dessertDishes?.length} блюда</span>
         </div>
         <div className={styles.carousel}>
           <div className={styles.carousel__item}>
             <Slider {...settings}>
-              {products.map((product, index) => (
-                <div
-                  key={index}
-                  className={styles.carousel__img2}
-                  onClick={() => openModal(product)}
-                >
-                  <img src={product.imageUrl} alt={product.name} />
-                  <div className={styles.price}>{product.price}</div>
-                  <div className={styles.dishes__name}>{product.name}</div>
-                  <div className={styles.info}>{product.calories} cal</div>
+              {dessertDishes?.map((dish) => (
+                <div className={styles.carousel__img2}>
+                  <img src="https://dasushi.od.ua/storage/article-preview/app-article/41/origin/sushi-polza-i-vred1653924777.jpg?t=1653924778" />
+                  <div className={styles.price}>{dish.price}</div>
+                  <div className={styles.dishes__name}>{dish.name}</div>
+                  <div className={styles.info}>{dish.info}</div>
+                  <button
+                    className={`${styles.addToCart} ${
+                      addedToCart && styles.added
+                    }`}
+                    onClick={() => handleAddToCart()}
+                  >
+                    Добавить в корзину
+                  </button>
                 </div>
               ))}
             </Slider>

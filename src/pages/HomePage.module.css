@@ -45,7 +45,7 @@
   border-radius: 10px;
   font-size: 23px;
   color: #90687e;
-  bottom: 10%;
+  bottom: 20%;
   left: 70%;
 }
 
@@ -99,4 +99,21 @@
   bottom: 0;
   margin: auto;
   color: black;
+}
+.addToCart {
+  margin-top: 1vh;
+  padding: 10px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  background-color: #90687e;
+  color: white;
+  cursor: pointer;
+}
+
+.added {
+  border: 1px solid #90687e;
+  color: #90687e;
+  background-color: initial;
 }
