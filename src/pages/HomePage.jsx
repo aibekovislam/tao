@@ -19,36 +19,6 @@ function HomePage() {
   );
   const dessertDishes = dishes.filter((dish) => dish.category === "Десерты");
 
-  const products = [
-    {
-      name: "Japaneese styke sushi",
-      price: 20,
-      imageUrl:
-        "https://dasushi.od.ua/storage/article-preview/app-article/41/origin/sushi-polza-i-vred1653924777.jpg?t=1653924778",
-      calories: 300,
-    },
-    {
-      name: "miso",
-      price: 25,
-      imageUrl:
-        "https://www.crowdedkitchen.com/wp-content/uploads/2020/08/vegan-miso-soup.jpg",
-      calories: 400,
-    },
-    {
-      name: "ramen",
-      price: 25,
-      imageUrl:
-        "https://www.kikkoman.eu/fileadmin/_processed_/4/4/csm_Japanese_authentic_soy_sauce_Ramen2_e282387f02.jpg",
-      calories: 400,
-    },
-    {
-      name: "onigiri",
-      price: 25,
-      imageUrl:
-        "https://food-images.files.bbci.co.uk/food/recipes/onigiri_39079_16x9.jpg",
-      calories: 400,
-    },
-  ];
   const [addedToCart, setAddedToCart] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
