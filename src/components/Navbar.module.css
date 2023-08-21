@@ -60,6 +60,7 @@
 }
 
 .navigation__vertical {
+
   top: 11vw;
   right: 89%;
   z-index: 9999;
@@ -70,15 +71,13 @@
 .navigation__items {
   display: flex;
   height: 610px;
+  width: 500px;
   justify-content: space-between;
   align-items: center;
   font-weight: 700;
   background-color: white;
   border-radius: 100px;
   color: gray;
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  line-height: 1px;
 }
 
 .navigation__item {
