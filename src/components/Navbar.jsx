@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import styles from "./Navbar.module.css";
 import { ReactComponent as SearchSVG } from "../assets/search-outline.svg";
 import { ReactComponent as OrderSVG } from "../assets/cart-outline (1).svg";
+import Order from "./Order";
+import { cartInfo } from "./modals/ProductModal";
 
 function Navbar() {
   const [breakfast, setBreakfast] = useState(true);
   const [lunch, setLunch] = useState(false);
   const [desert, setDesert] = useState(false);
+  const [order, setOrder] = useState(false);
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbar__items}>
@@ -19,12 +22,14 @@ function Navbar() {
           </div>
         </div>
         <div className={styles.navbar__item2}>
-          <div className={styles.search__block}>
-            <SearchSVG className={styles.search} />
-          </div>
-          <div className={styles.order__block}>
+          <div className={styles.order__block} onClick={() => setOrder(!order)}>
             <OrderSVG className={styles.order} />
           </div>
+          {order && (
+            <div className={styles.order__des}>
+              <Order setOrder={setOrder} order={cartInfo} />
+            </div>
+          )}
         </div>
       </div>
       <div className={styles.navigation__vertical}>

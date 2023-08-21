@@ -96,6 +96,25 @@ function MainContext({ children }) {
     }
   };
 
+  const addOrder = async (data) => {
+    try {
+      const response = await axios.post(`${ORDERS_URL}`, data);
+      getOrders();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const markAsServed = async (id, data) => {
+    try {
+      const response = await axios.patch(`${ORDERS_URL}/${id}`, data);
+      console.log("patched");
+      getOrders();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const value = {
     dishes: state.dishes,
     cart: state.cart,
@@ -107,6 +126,8 @@ function MainContext({ children }) {
     getOneDish,
     dish: state.dish,
     editDish,
+    addOrder,
+    markAsServed,
   };
 
   return <mainContext.Provider value={value}>{children}</mainContext.Provider>;
