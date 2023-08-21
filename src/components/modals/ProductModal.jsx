@@ -3,6 +3,8 @@ import styles from "./ProductModal.module.css";
 import { ReactComponent as CloseSVG } from "../../assets/close.svg";
 import { ReactComponent as OrderSVG } from "../../assets/cart-outline (1).svg";
 
+export let cartInfo = [];
+
 function ProductModal({ product, onClose }) {
   const [count, setCount] = useState(1);
 
@@ -17,6 +19,17 @@ function ProductModal({ product, onClose }) {
   };
 
   const total = (product.price * count).toFixed(2);
+
+  const cartAdder = (id, price, dish_name, count) => {
+    cartInfo.push({
+      id: id,
+      price: price,
+      dish_name: dish_name,
+      count: count,
+    });
+    onClose();
+  };
+
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
@@ -43,7 +56,12 @@ function ProductModal({ product, onClose }) {
           </div>
         </div>
         <div className={styles.btns}>
-          <button className={styles.add}>
+          <button
+            className={styles.add}
+            onClick={() => {
+              cartAdder(product.id, total, product.name, count);
+            }}
+          >
             добавить
             <OrderSVG className={styles.basket} />{" "}
           </button>

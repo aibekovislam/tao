@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import { useMainContext } from "../context/MainContext";
 import styles from "./OrderInfo.module.css";
 
 function OrderModal({ order, onClose }) {
-  const [countDishes, setCountDishes] = useState(0);
-
+  const { markAsServed } = useMainContext();
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
@@ -14,8 +14,13 @@ function OrderModal({ order, onClose }) {
               <li>{item}</li>
             ))}
           </ul>
-          <div className={styles.price}>Адрес: {order.address}</div>
-          <button className={styles.toCart} onClick={() => onClose()}>
+          <button
+            className={styles.toCart}
+            onClick={() => {
+              onClose();
+              markAsServed(order.id, { ...order, ordered: true });
+            }}
+          >
             Принять
           </button>
         </div>

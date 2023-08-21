@@ -72,8 +72,6 @@ function Dishes({
 
   const [filterBy, setFilterBy] = useState("all");
 
-  console.log(sortBy);
-
   const sortedAndFilteredDishes = useMemo(() => {
     let filteredDishes = [...dishes];
 

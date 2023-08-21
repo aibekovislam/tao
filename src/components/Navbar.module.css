@@ -148,3 +148,30 @@
     display: none;
   }
 }
+
+.order__des {
+  position: relative;
+}
+
+.order__info {
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  width: 200px;
+  height: auto;
+  padding: 20px 10px;
+  right: 15px;
+  top: 70px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.order_btn {
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  background: #90687e;
+  color: white;
+  cursor: pointer;
+}
