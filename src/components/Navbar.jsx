@@ -40,14 +40,14 @@ function Navbar() {
             Завтраки
           </div>
           <div
-            className={`${styles.navigation__item} ${lunch && styles.active}`}
+            className={`${styles.navigation__item2} ${lunch && styles.active}`}
             onClick={() => {
               setBreakfast(false);
               setLunch(true);
               setDesert(false);
             }}
           >
-            Второе блюдо
+            Второе Блюдо
           </div>
           <div
             className={`${styles.navigation__item} ${

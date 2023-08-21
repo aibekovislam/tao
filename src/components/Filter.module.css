@@ -40,3 +40,42 @@
   outline: none;
   border: none;
 }
+
+.filter__item2 > button {
+  padding: 10px 25px;
+  background-color: white;
+  border-radius: 3px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+}
+
+.filter__item3 > button {
+  padding: 10px 25px;
+  background-color: white;
+  border-radius: 3px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+}
+
+@media (max-width: 850px) {
+  .filter__item > button {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 550px) {
+  .filter__sort__item {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .filter_filters__item {
+    /* padding: 10px 0; */
+  }
+  .filter__item3 {
+    display: none;
+  }
+}
