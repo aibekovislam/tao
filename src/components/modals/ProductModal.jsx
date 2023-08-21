@@ -29,7 +29,7 @@ function ProductModal({ product, onClose }) {
           <div className={styles.info}>
             <div className={styles.name}>{product.name}</div>
             <div className={styles.under}>
-              <div className={styles.calories}>{product.calories} кал</div>
+              <div className={styles.calories}>{product.info}</div>
               <div className={styles.weight}>500 г</div>
             </div>
           </div>
@@ -38,8 +38,7 @@ function ProductModal({ product, onClose }) {
           </button>
           <div className={styles.sub_content}>
             <div className={styles.ingredients}>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
-              id maxime consequatur,
+              {product.description.slice(0, 100)}...
             </div>
           </div>
         </div>
@@ -61,7 +60,7 @@ function ProductModal({ product, onClose }) {
                 +
               </button>
             </div>
-            <div className={styles.price}>${total}</div>
+            <div className={styles.price}>{total} сом</div>
           </div>
         </div>
       </div>

@@ -2,17 +2,25 @@ import React from "react";
 import styles from "./Filter.module.css";
 import { ReactComponent as ArrowDownSVG } from "../assets/chevron-down-outline (1).svg";
 
-function Filter() {
+function Filter({ onSortChange, onFilterChange }) {
+  const handleSortChange = (event) => {
+    const selectedSort = event.target.value;
+    onSortChange(selectedSort);
+  };
+
+  const handleFilterChange = (event) => {
+    const selectedFilter = event.target.value;
+    onFilterChange(selectedFilter);
+  };
+
   return (
     <div className={styles.filter__flex}>
       <div className={styles.filter__sort__item}>
-        <div className={styles.filter__title}>SORT</div>
-        <select className={styles.category}>
-          <option>Sort by price</option>
+        <div className={styles.filter__title}>СОРТИРОВАТЬ</div>
+        <select onChange={handleSortChange} className={styles.category}>
+          <option value="all">Показать все</option>
           <ArrowDownSVG className={styles.arrow} />
-          <option>Sort by price</option>
-          <option>Sort by price</option>
-          <option>Sort by price</option>
+          <option value="price">Сортировать по ценам</option>
         </select>
       </div>
       <div className={styles.filter_filters__item}>

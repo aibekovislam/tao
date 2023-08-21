@@ -60,17 +60,14 @@
 }
 
 .navigation__vertical {
-
-  top: 11vw;
-  right: 89%;
-  z-index: 9999;
+  top: 50%;
+  right: 75%;
   position: fixed;
-  /* transform: rotate(270deg); */
+  transform: rotate(270deg);
 }
 
 .navigation__items {
   display: flex;
-  height: 610px;
   width: 500px;
   justify-content: space-between;
   align-items: center;
@@ -88,14 +85,10 @@
 }
 
 .navigation__item2 {
-  padding: 10px 20px;
-
+  padding: 15px 30px;
   border-radius: 100px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  line-height: 1;
 }
 
 .active {
