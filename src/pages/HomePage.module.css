@@ -62,6 +62,7 @@
   color: #90687e;
   bottom: 20%;
   left: 70%;
+  z-index: 2;
 }
 
 .dishes__name {
@@ -143,7 +144,7 @@
   width: 350px;
   height: 400px;
   object-fit: cover;
-  }
+}
 
 @media (max-width: 900px) {
   .first__title {

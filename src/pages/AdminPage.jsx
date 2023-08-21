@@ -17,6 +17,7 @@ function AdminPage() {
     imageUrl: "",
     ordered: false,
     category: "",
+    description: "",
   });
 
   function handleChange(e) {
@@ -101,11 +102,17 @@ function AdminPage() {
                 type="text"
                 name="price"
                 placeholder="Цена"
+                style={{ width: "70px" }}
               />
               <input
                 type="text"
                 name="imageURL"
                 placeholder="Ссылка на фотографию (из интернета)"
+              />
+              <input
+                type="text"
+                name="description"
+                placeholder="Описание, состав еды"
               />
               <select
                 value={formValue.category}
