@@ -24,6 +24,15 @@ function Filter() {
           <option>category</option>
         </select>
       </div>
+      <div className={styles.filter__item}>
+        <button>Vegeterian</button>
+      </div>
+      <div className={styles.filter__item3}>
+        <button>Seafood</button>
+      </div>
+      <div className={styles.filter__item3}>
+        <button>Politry</button>
+      </div>
     </div>
   );
 }

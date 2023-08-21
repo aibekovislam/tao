@@ -61,9 +61,8 @@ function ProductModal({ product, onClose }) {
                 +
               </button>
             </div>
+            <div className={styles.price}>${total}</div>
           </div>
-
-          <div className={styles.price}>${total}</div>
         </div>
       </div>
     </div>

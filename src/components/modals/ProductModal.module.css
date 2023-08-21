@@ -50,7 +50,7 @@
   font-size: 22px;
   font-weight: bold;
   text-transform: uppercase;
-  border-bottom: 1px solid #555;
+  border-bottom: 1.5px solid #868686;
   align-items: center;
   text-align: center;
   width: 60%;
@@ -119,7 +119,8 @@ eec5d3
 }
 
 .counter {
-  margin-left: -140px;
+  display: flex;
+  gap: 20px;
 }
 
 .counterContainer {
@@ -164,4 +165,96 @@ eec5d3
   margin: 0 20px;
   font-size: 24px;
   font-weight: bold;
+}
+
+@media (max-width: 1150px) {
+  .modalContent {
+    height: 80%;
+    flex-direction: column;
+    padding: 0px;
+  }
+
+  .btns {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .productImg {
+    width: 100%;
+    padding: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+  .counter {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .ingredients {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .under {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  .price {
+    font-size: 25px;
+    font-weight: 600;
+    color: #90687e;
+  }
+  .counter {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .add {
+    height: 30px;
+    width: 200px;
+  }
+  .counterValue {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 470px) {
+  .modalContent {
+    width: 70%;
+  }
+}
+
+@media (max-width: 330px) {
+  .modalContent {
+    width: 80%;
+  }
+  .price {
+    font-size: 18px;
+  }
+  .counterButton {
+    padding: 5px;
+  }
+  .counterButtonIncrement {
+    padding: 5px;
+  }
+  .counterValue {
+    font-size: 16px;
+  }
 }

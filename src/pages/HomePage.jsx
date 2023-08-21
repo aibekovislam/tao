@@ -9,7 +9,8 @@ import Slider from "react-slick";
 import { ReactComponent as ArrowLeftSVG } from "../assets/chevron-back-outline (2).svg";
 import { ReactComponent as ArrowRightSVG } from "../assets/chevron-forward-outline (4).svg";
 import { useMainContext } from "../context/MainContext";
-import ProductModal from "../modals/ProductModal";
+import ProductModal from "../components/modals/ProductModal";
+
 
 function HomePage() {
   const { getDishes, dishes } = useMainContext();
@@ -18,7 +19,6 @@ function HomePage() {
     (dish) => dish.category === "Второе блюдо"
   );
   const dessertDishes = dishes.filter((dish) => dish.category === "Десерты");
-
   const [addedToCart, setAddedToCart] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
